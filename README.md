@@ -2,7 +2,11 @@
 
 Use FiraCode NF!
 
-## Key bindings
+# TODOs
+ - Make different formatting options for different file extensions (.cpp, .txt and others, if needed)
+ - Solve code formatting problem
+
+# Key bindings
 Leader key is `<SPACE>`
 
 ## Telescope
