@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: Build release archive
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create tar archive
+        run: |
+          mkdir -p dist
+          tar -czf dist/neovim-config.tar.gz nvim
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: neovim-config-archive
+          path: dist/neovim-config.tar.gz
+
+  release:
+  name: Publish release
+  needs: build
+  runs-on: ubuntu-latest
+  steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: neovim-config-archive
+        path: ./dist
+
+    - name: Create release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: ./dist/neovim-config.tar.gz
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
