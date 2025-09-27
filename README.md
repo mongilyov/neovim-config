@@ -3,8 +3,8 @@
 Use FiraCode NF!
 
 # TODOs
- - Make different formatting options for different file extensions (.cpp, .txt and others, if needed)
  - Solve code formatting problem
+ - Do I need special Git plugins?
 
 # Key bindings
 Leader key is `<SPACE>`
@@ -38,3 +38,6 @@ Neo-tree is used to show code tree.
 ## Formatting code
  - `<leader>gf` -- format code. Problem -- formatting is bad. How to setup it?
  - `f` in visual mode -- ranged formatting
+
+# Specific file formatting
+You can use specify settings for file with special extensions by adding file `<filetype>.lua` in `ftplugin/` directory
