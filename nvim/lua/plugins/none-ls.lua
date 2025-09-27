@@ -13,5 +13,16 @@ return {
     })
 
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+    vim.keymap.set("v", "f", function()
+      local start_pos = vim.api.nvim_buf_get_mark(0, "<")
+      local end_pos = vim.api.nvim_buf_get_mark(0, ">")
+      vim.lsp.buf.format({
+        async = true,
+        range = {
+          start = { start_pos[1], start_pos[2] },
+          ["end"] = { end_pos[1], end_pos[2] },
+        },
+      })
+    end, { noremap = true, silent = true })
   end,
 }
