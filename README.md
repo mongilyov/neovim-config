@@ -7,7 +7,7 @@ Leader key is `<SPACE>`
 
 ## Telescope
 `<C-p>` -- show list of files and search with fuzzy search
-`<leader>fg>` -- use builtin `livegrep`
+`<leader>lg>` -- use builtin `livegrep`
 `<leader><leader>` -- show list of oldfiles (still need to know what is this)
 
 ## LSP
