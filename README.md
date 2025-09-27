@@ -1,1 +1,3 @@
-# Мой конфиг для neovim
+# My neovim config
+
+Use FiraCode NF!
